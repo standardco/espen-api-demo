@@ -1,0 +1,113 @@
+<div class="page container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="col-sm-12">
+        <h1>Search JRSM</h1>
+      </div>
+      <%= link_to "Back", root_path, class: "pull-right" %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= render partial: 'search_filters', locals: { form_route: 'jrsm-search',form_type: 'jrf' } %>
+    </div>
+  </div>
+<hr>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <h1><%= "#{@country} -"if @country %> <%= @year if @year %></h1>
+    </div>
+  </div>
+
+  <% if @empty_state == false %>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h3>Information on PC medicines requested to WHO</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <table class="table">
+          <thead>
+            <th>PC Medicine</th>
+            <!-- number of tablets -->
+            <th>Required</th>
+            <th>In stock</th>
+            <th>In pipeline</th>
+            <th>Requested</th>
+            <!-- total number of bottles -->
+            <th>Required</th>
+            <th>Requested</th>
+          </thead>
+          <tbody>
+          <% if @inventory.any? %>
+            <% @inventory.each do |medicine| %>
+              <tr>
+                <td><%= medicine['InfoAtWHOPCMedi'] %></td>
+                <!-- number of tablets -->
+                <td><%= number_with_delimiter(medicine['NoOfTablRequ']) %></td>
+                <td><%= number_with_delimiter(medicine['NoOfTablInSt']) %></td>
+                <td><%= number_with_delimiter(medicine['NoOfTablInPi']) %></td>
+                <td><%= number_with_delimiter(medicine['NoOfTablRequStd']) %></td>
+                <!-- total number of bottles -->
+                <td><%= number_with_delimiter(medicine['TnobRequ']) %></td>
+                <td><%= number_with_delimiter(medicine['TnobRequStd']) %></td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr style="text-align:center;">
+              <td colspan="7">N/A</td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h3>Number of people to be treated with donated medicine</h3>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <table class="table">
+            <thead>
+              <th>Disease</th>
+              <!-- number of tablets -->
+              <th>Round 1</th>
+              <th>Round 2</th>
+            </thead>
+            <tbody>
+              <% if @donated_medicines.any? %>
+                <% @donated_medicines.each do |medicine| %>
+                  <tr>
+                      <td><%= medicine['NoptwdmDise'] %></td>
+                      <td><%= number_with_delimiter(medicine['Roun1_1']) %></td>
+                      <td><%= number_with_delimiter(medicine['Roun2_1']) %></td>
+                  </tr>
+                <% end %>
+              <% else %>
+                <tr style="text-align:center;">
+                  <td colspan="7">N/A</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    <% if @url %>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          Source: <a href="<%= @url %>"> ESPEN Data platform</a>
+        </div>
+      </div>
+    <% end %>
+
+  <% elsif @empty_state == true %>
+    <div class="empty" id="zero-results">No matches for your search criteria</div>
+  <% end %>
+</div>
