@@ -40,31 +40,31 @@
           <tbody>
               <tr>
                 <td>LF</td>
-                <td><%= @summary1['NopOnceLFPreSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceLFSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceLFAdults'] if @summary1%></td>
-                <td><%= @summary1['NopOnceLFTotal'] if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceLFPreSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceLFSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceLFAdults']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceLFTotal']) if @summary1%></td>
               </tr>
               <tr>
                 <td>Oncho</td>
-                <td><%= @summary1['NopOnceOnchoPreSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceOnchoSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceOnchoAdults'] if @summary1%></td>
-                <td><%= @summary1['NopOnceOnchoTotal'] if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceOnchoPreSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceOnchoSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceOnchoAdults']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceOnchoTotal']) if @summary1%></td>
               </tr>
               <tr>
                 <td>STH</td>
-                <td><%= @summary1['NopOnceSTHPreSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceSTHSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceSTHAdults'] if @summary1%></td>
-                <td><%= @summary1['NopOnceSTHTotal'] if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSTHPreSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSTHSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSTHAdults']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSTHTotal']) if @summary1%></td>
               </tr>
               <tr>
                 <td>SCH</td>
-                <td><%= @summary1['NopOnceSCHPreSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceSCHSAC'] if @summary1%></td>
-                <td><%= @summary1['NopOnceSCHAdults'] if @summary1%></td>
-                <td><%= @summary1['NopOnceSCHTotal'] if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSCHPreSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSCHSAC']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSCHAdults']) if @summary1%></td>
+                <td><%= number_with_delimiter(@summary1['NopOnceSCHTotal']) if @summary1%></td>
               </tr>
           </tbody>
         </table>
@@ -86,23 +86,23 @@
           <tbody>
               <tr>
                 <td>LF</td>
-                <td><%= @summary1['CovePCLFGeog'] if @summary1 %></td>
-                <td><%= @summary1['CovePCLFNati'] if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCLFGeog'], precision: 2) if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCLFNati'], precision: 2) if @summary1 %></td>
               </tr>
               <tr>
                 <td>Oncho</td>
-                <td><%= @summary1['CovePCOnchoGeog'] if @summary1 %></td>
-                <td><%= @summary1['CovePCOnchoNati'] if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCOnchoGeog'], precision: 2) if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCOnchoNati'], precision: 2) if @summary1 %></td>
               </tr>
               <tr>
                 <td>STH</td>
-                <td><%= @summary1['CovePCSTHGeog'] if @summary1 %></td>
-                <td><%= @summary1['CovePCSTHNati'] if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCSTHGeog'], precision: 2) if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCSTHNati'], precision: 2) if @summary1 %></td>
               </tr>
               <tr>
                 <td>SCH</td>
-                <td><%= @summary1['CovePCSCHGeog'] if @summary1 %></td>
-                <td><%= @summary1['CovePCSCHNati'] if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCSCHGeog'], precision: 2) if @summary1 %></td>
+                <td><%= number_to_percentage(@summary1['CovePCSCHNati'], precision: 2) if @summary1 %></td>
               </tr>
           </tbody>
         </table>
@@ -128,59 +128,59 @@
           <tbody>
               <tr>
                 <td>MDA 1 (IVM+ALB)</td>
-                <td><%= @summary2['NopPCMDA1PreSAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA1SAC'] if @summary2 %></td>
-                <td><%= @summary2['NonPCMDA1Adults'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA1Total'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA1Cove'] if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA1PreSAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA1SAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NonPCMDA1Adults']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA1Total']) if @summary2 %></td>
+                <td><%= number_to_percentage(@summary2['NopPCMDA1Cove'], precision: 2) if @summary2 %></td>
               </tr>
               <tr>
                 <td>MDA 2 (DEC+ALB)</td>
-                <td><%= @summary2['NopPCMDA2PreSAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA2SAC'] if @summary2 %></td>
-                <td><%= @summary2['NonPCMDA2Adults'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA2Total'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA2Cove'] if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA2PreSAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA2SAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NonPCMDA2Adults']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA2Total']) if @summary2 %></td>
+                <td><%= number_to_percentage(@summary2['NopPCMDA2Cove'], precision: 2) if @summary2 %></td>
               </tr>
               <tr>
                 <td>MDA 3 (IVM)</td>
-                <td><%= @summary2['NopPCMDA3PreSAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA3SAC'] if @summary2 %></td>
-                <td><%= @summary2['NonPCMDA3Adults'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA3Total'] if @summary2 %></td>
-                <td><%= @summary2['NopPCMDA3Cove'] if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA3PreSAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA3SAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NonPCMDA3Adults']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCMDA3Total']) if @summary2 %></td>
+                <td><%= number_to_percentage(@summary2['NopPCMDA3Cove'], precision: 2) if @summary2 %></td>
               </tr>
               <tr>
                 <td>T1 (PZQ+ALB/MBD)</td>
-                <td><%= @summary2['NopPCT1PreSAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT1SAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT1Adults'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT1Total'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT1Cove'] if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT1PreSAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT1SAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT1Adults']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT1Total']) if @summary2 %></td>
+                <td><%= number_to_percentage(@summary2['NopPCT1Cove'] , precision: 2) if @summary2 %></td>
               </tr>
               <tr>
                 <td>T2 (PZQ)</td>
-                <td><%= @summary2['NopPCTDA1PreSAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCTDA1SAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCTDA1Adults'] if @summary2 %></td>
-                <td><%= @summary2['NopPCTDA1Total'] if @summary2 %></td>
-                <td><%= @summary2['NopPCTDA1Cove'] if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCTDA1PreSAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCTDA1SAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCTDA1Adults']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCTDA1Total']) if @summary2 %></td>
+                <td><%= number_to_percentage(@summary2['NopPCTDA1Cove'], precision: 2) if @summary2 %></td>
               </tr>
               <tr>
                 <td>T3 (ALB/MBD) - round 1</td>
-                <td><%= @summary2['NopPCT3R1PreSAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R1SAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R1Adults'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R1Total'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R1Cove'] if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R1PreSAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R1SAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R1Adults']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R1Total']) if @summary2 %></td>
+                <td><%= number_to_percentage(@summary2['NopPCT3R1Cove'], precision: 2) if @summary2 %></td>
               </tr>
               <tr>
                 <td>T3 (ALB/MBD) - round 2</td>
-                <td><%= @summary2['NopPCT3R2PreSAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R2SAC'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R2Adults'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R2Total'] if @summary2 %></td>
-                <td><%= @summary2['NopPCT3R2Cove'] if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R2PreSAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R2SAC']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R2Adults']) if @summary2 %></td>
+                <td><%= number_with_delimiter(@summary2['NopPCT3R2Total']) if @summary2 %></td>
+                <td><%= number_to_percentage(@summary2['NopPCT3R2Cove'], precision: 2) if @summary2 %></td>
               </tr>
           </tbody>
         </table>
@@ -207,48 +207,48 @@
           <tbody>
               <tr>
                 <td>Available</td>
-                <td><%= number_format(@summary_inventory['NopPCMDA1PreSAC']) if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA1SAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NonPCMDA1Adults'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA1Total'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA1Cove'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA1Cove'] if @summary_inventory.any? %></td>
+                <td><%= number_with_delimiter(@available['IVM']) if @available.present? %></td>
+                <td><%= number_with_delimiter(@available['DEC']) if @available.present? %></td>
+                <td><%= number_with_delimiter(@available['ALBLF']) if @available.present? %></td>
+                <td><%= number_with_delimiter(@available['ALBSTH']) if @available.present? %></td>
+                <td><%= number_with_delimiter(@available['MBD']) if @available.present? %></td>
+                <td><%= number_with_delimiter(@available['PZQ']) if @available.present? %></td>
               </tr>
               <tr>
                 <td>Distributed</td>
-                <td><%= @summary_inventory['NopPCMDA2PreSAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA2SAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NonPCMDA2Adults'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA2Total'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA2Cove'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA2Cove'] if @summary_inventory.any? %></td>
+                <td><%= number_with_delimiter(@distributed['IVM']) if @distributed.present? %></td>
+                <td><%= number_with_delimiter(@distributed['DEC']) if @distributed.present? %></td>
+                <td><%= number_with_delimiter(@distributed['ALBLF']) if @distributed.present? %></td>
+                <td><%= number_with_delimiter(@distributed['ALBSTH']) if @distributed.present? %></td>
+                <td><%= number_with_delimiter(@distributed['MBD']) if @distributed.present? %></td>
+                <td><%= number_with_delimiter(@distributed['PZQ']) if @distributed.present? %></td>
               </tr>
               <tr>
                 <td>Wasted</td>
-                <td><%= @summary_inventory['NopPCMDA3PreSAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA3SAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NonPCMDA3Adults'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA3Total'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA3Cove'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCMDA3Cove'] if @summary_inventory.any? %></td>
+                <td><%= number_with_delimiter(@wasted['IVM']) if @wasted.present? %></td>
+                <td><%= number_with_delimiter(@wasted['DEC']) if @wasted.present? %></td>
+                <td><%= number_with_delimiter(@wasted['ALBLF']) if @wasted.present? %></td>
+                <td><%= number_with_delimiter(@wasted['ALBSTH']) if @wasted.present? %></td>
+                <td><%= number_with_delimiter(@wasted['MBD']) if @wasted.present? %></td>
+                <td><%= number_with_delimiter(@wasted['PZQ']) if @wasted.present? %></td>
               </tr>
               <tr>
                 <td>Received</td>
-                <td><%= @summary_inventory['NopPCT1PreSAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1SAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Adults'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Total'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Cove'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Cove'] if @summary_inventory.any? %></td>
+                <td><%= number_with_delimiter(@received['IVM']) if @received.present? %></td>
+                <td><%= number_with_delimiter(@received['DEC']) if @received.present? %></td>
+                <td><%= number_with_delimiter(@received['ALBLF']) if @received.present? %></td>
+                <td><%= number_with_delimiter(@received['ALBSTH']) if @received.present? %></td>
+                <td><%= number_with_delimiter(@received['MBD']) if @received.present? %></td>
+                <td><%= number_with_delimiter(@received['PZQ']) if @received.present? %></td>
               </tr>
               <tr>
                 <td>Remaining</td>
-                <td><%= @summary_inventory['NopPCT1PreSAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1SAC'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Adults'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Total'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Cove'] if @summary_inventory.any? %></td>
-                <td><%= @summary_inventory['NopPCT1Cove'] if @summary_inventory.any? %></td>
+                <td><%= number_with_delimiter(@remaining['IVM']) if @remaining.present? %></td>
+                <td><%= number_with_delimiter(@remaining['DEC']) if @remaining.present? %></td>
+                <td><%= number_with_delimiter(@remaining['ALBLF']) if @remaining.present? %></td>
+                <td><%= number_with_delimiter(@remaining['ALBSTH']) if @remaining.present? %></td>
+                <td><%= number_with_delimiter(@remaining['MBD']) if @remaining.present? %></td>
+                <td><%= number_with_delimiter(@remaining['PZQ']) if @remaining.present? %></td>
               </tr>
           </tbody>
         </table>

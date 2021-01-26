@@ -17,8 +17,11 @@ class HomeController < ApplicationController
           @data = body["jrf"]["summary"]
           @summary1 = body["jrf"]["summary"]["summary1"]
           @summary2 = body["jrf"]["summary"]["summary2"]
-          @summary_inventory = body["jrf"]["summary"]["summary3_inv"]
-          @summary_inventory = body["jrf"]["summary"]["summary3_inv"]
+          @remaining = body["jrf"]["summary"]["summary3_inv"].select{|i| i["Status"] == "Remaining"}.first
+          @received = body["jrf"]["summary"]["summary3_inv"].select{|i| i["Status"] == "Received"}.first
+          @wasted = body["jrf"]["summary"]["summary3_inv"].select{|i| i["Status"] == "Wasted"}.first
+          @distributed = body["jrf"]["summary"]["summary3_inv"].select{|i| i["Status"] == "Distributed"}.first
+          @available = body["jrf"]["summary"]["summary3_inv"].select{|i| i["Status"] == "Available"}.first
         end
         @empty_state = false
       else
