@@ -13,7 +13,35 @@
  *= require_tree .
  *= require_self
  */
+html, body {
+  height: 100%;
+}
 
 .container {
   margin-top: 10%;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-menu {
+  width: 100%;
+  text-align: center;
+}
+
+#powered_by {
+  display: inline-block;
+}
+#powered_by span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+#powered_by .sdk-logo img {
+  max-width: 100px;
 }
