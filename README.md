@@ -19,5 +19,5 @@ Start the app with `foreman run rails s` and navigate to the localhost
 
 ### General Info
 
-Ruby `2.6.5`
-Rails `5.1.4`
+- Ruby `2.6.5`
+- Rails `5.1.4`
