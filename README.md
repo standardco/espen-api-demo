@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README should provide everything needed to get this demo app up and running locally. No database is required for setup and the only thing that is needed is an ESPEN API key.
 
-Things you may want to cover:
+Step 1:
 
-* Ruby version
+clone project locally and run `bundle install`
 
-* System dependencies
+Step 2: 
 
-* Configuration
+Create `.env` file and setup required config variables. Which are `ESPEN_ENDPOINT` and `ESPEN_API_KEY`
 
-* Database creation
+Step 3:
 
-* Database initialization
+Start the app with `foreman run rails s` and navigate to the localhost
 
-* How to run the test suite
+### General Info
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby `2.6.5`
+Rails `5.1.4`
