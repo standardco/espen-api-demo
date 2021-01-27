@@ -7,7 +7,7 @@ This README should provide everything needed to get this demo app up and running
 
 Step 1:
 
-clone project locally and run `bundle install`
+Clone project locally and run `bundle install`
 
 Step 2: 
 
