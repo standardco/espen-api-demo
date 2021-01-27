@@ -1,5 +1,5 @@
 # README
-This demo app is meant to show how to interation with [ESPEN Portal](https://admin.espen.afro.who.int/)'s api. The link below provides documentation for the API and also provides a form to request an API key (which is required).
+This simple demo app is meant to show how to integrate with [ESPEN Portal](https://admin.espen.afro.who.int/)'s API. The link below provides documentation for the API and also provides a form to request an API key (which is required).
 
 https://admin.espen.afro.who.int/docs/api
 
@@ -16,6 +16,8 @@ Create `.env` file and setup required config variables. Which are `ESPEN_ENDPOIN
 Step 3:
 
 Start the app with `foreman run rails s` and navigate to the localhost
+
+At this point the app should be working locally. From the homepage you can choose to search for JRF or JRSM data by Country and Year.
 
 ### General Info
 
